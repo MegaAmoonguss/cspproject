@@ -1,3 +1,6 @@
 __pycache__/
 profiles.db
 test.py
+.project
+.pydevproject
+.settings/

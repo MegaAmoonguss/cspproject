@@ -10,11 +10,11 @@ try:
 except sqlite3.OperationalError:
     pass
 
-# take user input
-selection = int(input("Enter 1 to add a new profile, 2 to remove one, 3 to look one up, 4 to display all: "))
-
-# check selection and execute code accordingly
 try:
+    # take user input
+    selection = int(input("Enter 1 to add a new profile, 2 to remove one, 3 to look one up, 4 to display all: "))
+
+    # check selection and execute code accordingly
     if selection == 1:
         name = input("Enter first and last name: ").split()
         age = int(input("Enter age: "))
@@ -55,8 +55,12 @@ try:
             print("Table is empty.")
         for row in profile_list:
             print(row)
+    else:
+        print("Invalid selection.")
+except NameError:
+    print("Invalid integer.")
 except ValueError:
-    print("Invalid age.")
+    print("Invalid input.")
 except IndexError:
     print("Please separate first and last name with a space.")
 
